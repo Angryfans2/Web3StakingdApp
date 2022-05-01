@@ -967,12 +967,12 @@ var account = null;
 var contract = null;
 var vaultcontract = null;
 
-const NFTCONTRACT = "0x883dE0998A627906f66000D34C91D68F7B2c4C83";
+const NFTCONTRACT = "0xbe3D0038baEe4291715D25bd8eF5C6499c2933e9";
 const STAKINGCONTRACT = "0x60fEA9c2cFe8b44a9C7bf16dA54856CbfC290f13"
-const polygonscanapikey = "DBQX5JUSAVUZRK8CC4IN2UZF9N2HA63P4U";
-const polygonscanapi = "https://api-testnet.polygonscan.com/api"
+const polygonscanapikey = "NJ9IFRMEU4752H6FEZMJDUIV62G4S75XX3";
+const polygonscanapi = "https://api.polygonscan.com/api"
 const moralisapi = "https://deep-index.moralis.io/api/v2/";
-const moralisapikey = "QlJv1SQwf47sxwKLY6Ut8M9sq9KI9q6MmrcEIMuNHiGF5lNKdSLfDmnACTO2rK2g";
+const moralisapikey = "gusPE2za4RjO75ua8kxNlzF9sHTO0hh2p9b5ELGWXU";
 const nftpng = "https://ipfs.io/ipfs/QmetESUb7wTPr8mBHWFsiSKMw6HTLWUGoL8DrkcaY9TTyh/";
 
 const providerOptions = {
@@ -1025,8 +1025,8 @@ class App extends Component {
             console.log(outputa.data)
         })
 		let config = {'X-API-Key': moralisapikey, 'accept': 'application/json'};
-		await axios.get((moralisapi + `/nft/${NFTCONTRACT}/owners?chain=mumbai&format=decimal`), {headers: config})
-		.then(outputb => {
+		await axios.get((moralisapi + `/nft/${NFTCONTRACT}/owners?chain=polygon&format=decimal`), {headers: config})
+		.then(outputb => { config
 			const { result } = outputb.data
             this.setState({
                 nftdata:result
